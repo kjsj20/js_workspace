@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프레임애니메이션</title>
+
+    <script>
+        var n = 1;
+
+        function next() {
+            if (n < 18) {
+                n = n + 1;
+            }
+            else {
+                n = 1
+            }
+            document.getElementById("pic").src = "../images/hero/image" + n + ".png";
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <img src="../images/hero/image1.png" id="pic" alt="">
+    <button onclick="next()">다음 프레임보기</button>
+</body>
+
+</html>
