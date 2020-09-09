@@ -1,0 +1,19 @@
+/*
+     html은 문서이기 때문에 , tag 만으로는 컨텐츠의 위치를 마음대로 지정할 수 없다. 
+     css를 이용하면 html의 문서로서의 한계를 극복함.
+     css position 을 이용해보자!
+*/
+
+body{
+    /* 배경은 다른 요소들과, 충돌이 없다. */
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/39222e18-80cb-4cf9-abf3-a86ee32917cd/d7bfe4v-38f6b94f-b4e8-49b5-9c0b-4777fdb3b567.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMzkyMjJlMTgtODBjYi00Y2Y5LWFiZjMtYTg2ZWUzMjkxN2NkXC9kN2JmZTR2LTM4ZjZiOTRmLWI0ZTgtNDliNS05YzBiLTQ3NzdmZGIzYjU2Ny5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.pxbOMbIe5yS35L5zpeyQ2u21f_TlHRf-77Kf60sL3xM);
+    background-repeat:repeat-x;
+    background-position: 0px  0px;
+}
+
+#pic{
+    position : absolute; /*절대위치(부모 요소를 기준으로 한 배치방법)*/
+    left: 100px; /*x축을 200px*/
+    top: 50px; /*y축을 50px*/
+    width: 200px;
+}
