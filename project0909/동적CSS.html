@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동적CSS</title>
+    <link rel="stylesheet" href="동적CSS.css">
+    <script src="동적CSS.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id = "control">
+            <ol>
+                <li>
+                    <button onClick = "setWidth()">width</button>
+                    <button onClick = "setHeight()">height</button>
+                </li>
+
+                <li>
+                    <button onclick="setScaleX()">scaleX</button>
+                    <button onclick="setScaleY()">scaleY</button>
+                </li>
+
+                <li>
+                    <button>opacity</button>
+                </li>
+
+                <li>
+                    <button>rotate</button>
+                </li>
+
+                <li>
+                    <button>position</button>
+                </li>
+
+                <li>
+                    <button>border</button>
+                </li>
+            </ol>
+        </div>
+        <div id = "result">
+            <img src="../images/hero/image1.png" id = "pic" alt="">
+        </div>
+    </div>
+</body>
+</html>
