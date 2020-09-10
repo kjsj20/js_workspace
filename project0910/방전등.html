@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>방전등</title>
+        <link rel="stylesheet" href="방전등.css">
+        <script src="방전등.js"></script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="code">
+                <img id="pic" onclick = "turn()"  src="../images/light/switch_off.png"/>
+            </div>
+            <div id="content">
+                <!-- mask 와 img는 content 라는 부모를 두고 위치를 결정해주자: position:absolute -->
+                <img  src="../images/light/room.jpg" width="700px" height="600px"/>
+                <div id="mask"></div>                
+            </div>
+        </div>
+    </body>
+</html>

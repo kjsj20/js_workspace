@@ -1,0 +1,31 @@
+
+#wrap{
+    width: 800px;
+    height: 600px;
+    margin : auto;
+    position: relative;
+}
+#code{
+    width: 100px;
+    height: 100%;
+    background: #cccccc;
+    position: absolute;
+}
+#content{
+    width: 700px;
+    height: 100%;
+    left : 100px;
+    position: absolute;
+}
+
+/* 자식요소에 position 을 명시하면 반드시 부모에도 position이 명시되어 있어야한다. */
+#mask{
+    width: 700px;
+    height: 600px;
+    background: black;
+    opacity : 0.8;
+    position: absolute;
+}
+#content img{
+    position: absolute;
+}
