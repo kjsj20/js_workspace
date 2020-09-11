@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키보드제어</title>
+    <link rel="stylesheet" href="키보드제어swich.css">
+    <script src="키보드제어swich.js"></script>
+</head>
+<!-- onKeyDown : 키보드를 누르면... -->
+<body onkeyDown="joystick()">
+    <audio controls>
+        <source src="../sound/bgm.mp3" type="audio/mpeg">
+    </audio>
+
+    <button onclick="moveBg()">배경테스트</button>
+    <button onclick="auto()">배경자동</button>
+
+    <div id = "wrap">
+        <img id = "bird" src="https://www.nicepng.com/png/detail/2-21959_angry-birds-png-angry-bird-png.png"/>
+    </div>
+</body>
+</html>

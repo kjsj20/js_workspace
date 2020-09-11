@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스이벤트</title>
+    <link rel="stylesheet" href="마우스이벤트.css">
+    <script src="마우스이벤트.js"></script>
+</head>
+<!-- onMouseMove : 마우스를 움직이는 동안 발생하는 이벤트를 처리하는 핸들러 -->
+<body onMouseMove="getPoint()">
+    <div id = "wrap">  
+        <div>
+            마우스 x좌표 : <input type = "text" id = "tx"/>
+            마우스 y좌표 : <input type = "text" id = "ty"/>
+        </div>
+        <div>
+            <img id ="pic" src="../images/hero/image1.png" onclick="alert('아야야')" alt="">
+        </div>
+    </div>
+</body>
+</html>

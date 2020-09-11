@@ -1,0 +1,21 @@
+#wrap{
+    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/c1772259824647.5a309e5d41f01.jpg);
+    background-size: 1024px 768px;
+    width: 1024px;
+    height: 768px;
+    margin:auto;
+    position: relative;
+    overflow:hidden;
+}
+
+#bird{
+    width: 100px;
+    height: 100px;
+    /* 
+        앵그리버드 이미지를 wrapper 라는 div를 기준으로 즉 부모로 
+        위치를 설정하자 !! 결국 wrapper에 대한 absolute로 처리하자!
+    */
+    position: absolute;/* 부모 요소를 기준으로 한 위치 설정 방법 */
+    left : 100px;
+    top : 50px;
+}

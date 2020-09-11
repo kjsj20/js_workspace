@@ -1,0 +1,18 @@
+body{
+    margin: 0px;
+}
+#wrap{
+    width: 100%;
+    height: 1000px;
+    background: yellow;
+    position: relative;
+}
+
+#pic{
+    width: 150px;
+    height: 150px;
+    border : 1px solid red;
+    position: absolute;
+    left: 0px;
+    top: 100px;
+}
