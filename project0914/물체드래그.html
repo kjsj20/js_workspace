@@ -11,14 +11,14 @@
     시작하는 body부터 ~~ 끝나는 body 까지 실행부가 태그를 다 읽었을때
     발생한느 이벤트를 감지하는 핸들러 
  -->
-<body onLoad = "init()" onmousemove="getPos()">
+<body onLoad = "init()" onmousemove="follow()">
     <script src="물체드래그.js"></script>
     <!-- 
         물체를 대상으로 마우스를 누르고 있을때만, 옮길수 있는 효과내기
         (드래그drag)
      -->
      <div class="wrap">
-        <img src="../images/hero/image1.png" id="hero">
+        <img src="../images/hero/image1.png" id="hero" onClick="setFlag()">
      </div>
      
 </body>

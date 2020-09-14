@@ -1,0 +1,8 @@
+#wrap{
+    width: 700px;
+    height: 700px;
+    background: skyblue;
+    margin : auto;
+    position: relative;
+    overflow: hidden;
+}

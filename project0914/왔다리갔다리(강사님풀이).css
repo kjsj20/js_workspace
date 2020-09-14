@@ -1,0 +1,12 @@
+#box{
+    width: 100px;
+    height: 100px;
+    background-color:  red;
+    position : absolute;
+    left: 0px;
+    top: 150px;
+    color : white;
+    font-size : 30px;
+    text-align : center;
+    line-height : 95px;
+}

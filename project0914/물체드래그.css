@@ -2,8 +2,8 @@ body{
     margin : 0px;
 }
 #hero{
-    border:2px solid red;
-    width: 60px;
+    /* border:2px solid red; */
+    width: 150px;
     position: absolute;
     left: 0px;
     top: 0px;
