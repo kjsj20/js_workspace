@@ -1,0 +1,11 @@
+<script>
+    var n = prompt("몇단부터 출력할래요?!");
+    for (i = n; i >= 1; i--) {
+        document.write("------------------------------------</br>")
+        document.write(`${i}단 출력</br>`)
+        document.write("-----------------------------------</br>")
+        for (j = 1; j <= 9; j++) {
+            document.write(`${i} x ${j} = ${i * j}</br>`)
+        }
+    }
+</script>
