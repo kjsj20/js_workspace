@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팔레트효과</title>
+    <link rel="stylesheet" href="팔레트효과.css">
+    <script src="팔레트효과.js"></script>
+</head>
+<body>
+    <div class = "wrap">
+        <!-- 썸네일 7개 생성 -->
+        <!-- span은 아무런 효과가 없는 태그이다.. 따라서 단순히 마크업을
+        하기 위해서라면 span 이용할 수 있다..
+        block or inline(widthX heightX) -->
+        <div onmouseover="setColor('red')" style="background:red">red</div>
+        <div onmouseover="setColor('orange')" style="background:orange">orange</div>
+        <div onmouseover="setColor('yellow')" style="background:yellow">yellow</div>
+        <div onmouseover="setColor('green')" style="background:green">green</div>
+        <div onmouseover="setColor('blue')" style="background:blue">blue</div>
+        <div onmouseover="setColor('navy')" style="background:navy">navy</div>
+        <div onmouseover="setColor('purple')" style="background:purple">purple</div>
+        <div id="content"></div>
+    </div>
+</body>
+</html>
