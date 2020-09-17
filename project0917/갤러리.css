@@ -1,0 +1,29 @@
+#wrap{
+    width: 700px;
+    height: 600px;
+    margin: auto;
+    /* background: yellow; */
+    overflow: hidden;
+}
+
+.pics{
+    width: 150px;
+    height: 100%;
+    /* background: red; */
+    float: left;
+    border : 2px solid;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.pics img{
+    width: 150px;
+    height: 100px;
+    float: left;
+}
+
+.content{
+    width: 550px;
+    height: 100%;
+    float: left;
+}
