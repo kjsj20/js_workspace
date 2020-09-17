@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this개념</title>
+    <script>
+        function setText(){
+            var btn = document.querySelector("button");
+            btn.innerText="저 불렀어요?";
+        }
+    </script>
+</head>
+<body>
+    <img src="../images/view/3.jpg" id = "pic" onclick="alert(this.src)"/>
+    <!--클릭시 버튼의 제목을 바꾸는 다양한 방법을 배워보자!!-->
+    <button onclick="this.innerText='왕버튼'">눌러보세용</button>
+</body>
+</html>

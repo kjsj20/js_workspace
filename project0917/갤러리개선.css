@@ -6,7 +6,7 @@
     border: 5px solid;
 }
 
-.pics{
+.thumb{
     width: 150px;
     height: 100%;
     float: left;
@@ -15,13 +15,19 @@
     overflow: scroll;
 }
 
-.pics img{
+.thumb img{
     width: 150px;
     height: 100px;
     float: left;
 }
 
-.content{
+.detail{
+    width: 550px;
+    height: 100%;
+    float: left;
+}
+
+.detail img{
     width: 550px;
     height: 100%;
     float: left;
