@@ -40,3 +40,7 @@ function regist() {
 
     area.innerHTML = str; //문자열 내에 <꺽쇠>가 있다면, 태그로 해석함!
 }
+
+function remove(){
+    document.getElementById("result-area").innerHTML="";
+}
