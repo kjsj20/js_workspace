@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜자리수처리</title>
+    <style>
+        input {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+        }
+    </style>
+    <script src="../js/lib.js"></script>
+    <script>
+
+        window.addEventListener("load", function () {
+            let date1 = document.querySelector("#date1");
+            let year = document.querySelector("#year");
+            let mon = document.querySelector("#mon");
+            let day = document.querySelector("#day");
+        });
+
+        function addZero() {
+            date1.innerText = year.value + "년" + getZeroDate(mon.value) + "월" + getZeroDate(day.value) + "일";
+        }
+
+        function removeZero(){
+            date1.innerText = year.value + "년" +  parseInt(mon.value) + "월" + parseInt(day.value) + "일";
+        }
+    </script>
+</head>
+
+<body>
+    <input id="year" type="text" />년
+    <input id="mon" type="text" />월
+    <input id="day" type="text" />일
+    <button onclick="addZero()">확인</button>
+    <button onClick="removeZero()">0없애기</button>
+    <h1 id="date1">검증 및 데이터 정제결과 나올곳</h1>
+</body>
+
+</html>

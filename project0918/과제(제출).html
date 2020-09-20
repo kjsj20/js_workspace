@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 1000px;
+            height: 800px;
+            position: relative;
+        }
+
+        #ball{
+            background: red;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            color : white;
+        }
+    </style>
+
+    <script>
+        let a = 0.2;
+        let ballX;
+        let ballY;
+
+        function init(){
+            let x = document.querySelector("#x"); 
+            let y = document.querySelector("#y"); 
+            let ball = document.querySelector("#ball");
+            ball.style.position = "absolute";
+            ball.style.left = 50 + "px";
+            ball.style.top = 50 + "px";
+            x.value = 50;
+            y.value = 50;
+            setInterval("setXY()", 30);
+        }
+
+        function clickBtn(){
+            ballX = x.value 
+            ballY = y.value
+        }
+
+        function setXY(){
+            ball.style.left = parseInt(ball.style.left) + a * (ballX - parseInt(ball.style.left)) + "px";   
+            ball.style.top = parseInt(ball.style.top) + a * (ballY - parseInt(ball.style.top)) + "px";
+        }     
+    </script>
+</head>
+<body onload="init()">
+
+    <input id = "x" type="text" placeholder = "이동할 x좌표">
+    <input id = "y" type="text" placeholder = "이동할 y좌표">
+    <button onclick="clickBtn()">실행</button>
+    <div id = "ball"></div>
+</body>
+</html>
