@@ -13,11 +13,11 @@ function init(){
     
     layer.addEventListener("mouseover",function(){
         targetO = 0;
-    })
+    });
 
     layer.addEventListener("mouseout", function(){
         targetO = 1;
-    })
+    });
 }
 
 function setOpacity(){
