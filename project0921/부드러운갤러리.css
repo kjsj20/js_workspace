@@ -1,0 +1,28 @@
+#wrap{
+    width: 500px;
+    height: 450px;
+    background: yellow;
+    margin : auto;
+}
+
+#mask{
+    width: 100%;
+    height: 400px;
+    background:blue;
+    overflow: hidden;
+}
+
+#navi{
+    text-align: center; /*div의 컨텐츠를 가운데 정렬*/
+    font-size:30px;
+}
+
+#box{
+    width: 3500px;
+    height: 400px;
+    background: burlywood;
+}
+
+a{
+    text-decoration: none; 
+}
