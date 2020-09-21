@@ -5,7 +5,7 @@
 #wrap{
     width: 600px;
     height: 600px;
-    background: red;
+    background: green;
     position: relative;
     margin: auto;
     box-sizing: border-box;
@@ -16,11 +16,16 @@
     width: 200px;
     height: 200px;
     background: yellow;
-    position: relative;
-    /* overflow: hidden; */
+    position: absolute;
+    overflow: hidden;
+    left: 200px;
+    top: 200px;
     line-height: 200px;
 }
 
 #box{
-    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: blue;
+    position: relative;
 }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판탭(강사님)</title>
+    <style>
+        .wrap{
+            width: 600px;
+            height: 500px;
+            margin: auto;
+        }
+        .tab{
+            width: 100%;
+            height: 50px;
+        }
+        #box1, #box2, #box3{
+            width: 100%;
+            height: 450px;
+        }
+        #box1{
+            background-color:red;
+        }
+        #box2{
+            background-color: gold;
+            display:none;
+        }
+        #box3{
+            background-color: dodgerblue;
+            display:none;
+        }
+        .tab a{
+            text-decoration: none;
+            display: inline-block;
+            width: 196px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size:25px;
+        }
+    </style>
+    <script>
+        var box1;
+        var box2;
+        var box3;
+        function init(){
+            box1 = document.getElementById("box1");
+            box2 = document.getElementById("box2");
+            box3 = document.getElementById("box3");
+        }
+        
+        function showHide(n){
+            console.log(n);
+            switch(n){
+                case 1:
+                    box1.style.display = "block";
+                    box2.style.display = "none";
+                    box3.style.display = "none";
+                    break;
+                case 2:
+                    box1.style.display = "none";
+                    box2.style.display = "block";
+                    box3.style.display = "none";
+                    break;
+                case 3:
+                    box1.style.display = "none";
+                    box2.style.display = "none";
+                    box3.style.display = "block";
+                    break;
+            }
+        }
+
+        window.addEventListener("load", function(){
+            init();
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="tab">
+            <a href="javascript:showHide(1)" style = "background: red;">공지사항</a>
+            <a href="javascript:showHide(2)" style = "background: gold;">Q&A</a>
+            <a href="javascript:showHide(3)" style = "background: dodgerblue;">자유게시판</a>
+        </div>
+        <div class="content">
+            <div id="box1"></div>
+            <div id="box2"></div>
+            <div id="box3"></div>
+        </div>
+    </div>
+</body>
+</html>
