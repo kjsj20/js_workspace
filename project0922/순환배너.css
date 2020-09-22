@@ -1,0 +1,11 @@
+body{
+    background: black;
+}
+#wrap{
+    width: 400px;
+    height: 75px;
+    background-color: white;
+    margin: auto;
+    position: relative;
+    /* overflow: hidden; */
+}

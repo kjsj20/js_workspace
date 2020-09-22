@@ -17,6 +17,8 @@
         #path {
             width: 100%;
             height: 50px;
+            text-align: center;
+            font-size: 35px;
         }
 
         #photo {
@@ -38,6 +40,9 @@
     <script>
         var imgArr = new Array(); //크기를 명시하지 않아도 된다!!(js에서는...)
         var n = 0;
+        var flag=false;
+        var st;
+
         imgArr[0] = "../images/travel2/aa.jpg";
         imgArr[1] = "../images/travel2/ya.jpg";
         imgArr[2] = "../images/travel2/ab.jpg";
@@ -49,27 +54,58 @@
         imgArr[8] = "../images/travel2/ub.jpg";
         imgArr[9] = "../images/travel2/ax.jpg";
 
+        window.addEventListener("load", function () {
+            init();
+        })
+
+        function init() {
+            printPath();
+        }
+
+
         function prev() {
-            var pic = document.getElementById("pic");
-            n--;
-            pic.src = imgArr[n];
+            if (n > 0) {
+                var pic = document.getElementById("pic");
+                n--;
+                pic.src = imgArr[n];
+                printPath();
+            }
         }
 
         function next() {
             var pic = document.getElementById("pic");
-            n++;
-            pic.src = imgArr[n];
+            if (n < imgArr.length - 1) {
+                n++;
+                pic.src = imgArr[n];
+            } else {
+                n = 0;
+                pic.src = imgArr[n];
+            }
+            printPath();
         }
 
-        function auto(){
+        function auto() {
             var interval = document.getElementById("interval");
+            var bt = document.getElementById("bt");
             var speed = parseInt(interval.value);
-            if(speed===0){
+            if (speed === 0) {
                 alert("속도를 선택하세요");
                 return; //아래의 코드로는 더이상 진행못함..즉 실행부가 되돌아감
-            } 
-            
-            setInterval("next()", speed);
+            }
+            flag = !flag;
+            //버튼의 제목을 pause 상태로 바꿔준다!! one touch 버튼이므로..
+            if(flag === true){
+                st = setInterval("next()", speed);
+                bt.innerText = "Pause";
+            } else {
+                bt.innerText = "Auto";
+                clearTimeout(st);
+            }
+        }
+        //경로 출력... 여러 부분에서 사용할 일이 있으므로, 재사용성을 위해 함수로 정의해놓자!
+        function printPath() {
+            var path = document.getElementById("path");
+            path.innerText = imgArr[n];
         }
     </script>
 </head>
@@ -80,7 +116,7 @@
         <div id="photo"><img id="pic" src="../images/travel2/aa.jpg" alt=""></div>
         <div id="control">
             <button onclick="prev()">◀</button>
-            <button onclick="auto()">auto</button>
+            <button id="bt" onclick="auto()">auto</button>
             <select id="interval">
                 <option value="0">속도선택</option>
                 <option value="1000">1초</option>
