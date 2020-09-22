@@ -1,5 +1,5 @@
 body{
-    background: black;
+    /* background: black; */
 }
 #wrap{
     width: 400px;
@@ -7,5 +7,5 @@ body{
     background-color: white;
     margin: auto;
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
