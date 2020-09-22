@@ -1,91 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시판탭(강사님)</title>
-    <style>
-        .wrap{
-            width: 600px;
-            height: 500px;
-            margin: auto;
-        }
-        .tab{
-            width: 100%;
-            height: 50px;
-        }
-        #notice, #qna, #board{
-            width: 100%;
-            height: 450px;
-        }
-        #notice{
-            background-color:red;
-        }
-        #qna{
-            background-color: gold;
-            display:none;
-        }
-        #board{
-            background-color: dodgerblue;
-            display:none;
-        }
-        .tab a{
-            text-decoration: none;
-            display: inline-block;
-            width: 196px;
-            height: 50px;
-            text-align: center;
-            line-height: 50px;
-            font-size:25px;
-        }
-    </style>
-    <script>
-        var notice;
-        var qna;
-        var board;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+.wrapper{
+    width:600px;
+    height:500px;
+    background:black;
+    margin: auto;
+}    
+.tab{
+    width:100%;
+    height:50px;
+    background:greenyellow;
+}
+#box1, #box2, #box3{
+    width:100%;
+    height:450px;
+}
+#box1{
+    background-color: red;
+}
+#box2{
+    background-color: gold;
+    display: none;
+}
+#box3{
+    background-color: dodgerblue;
+    display: none;
+}
+.tab a{
+    text-decoration: none;  
+    display:inline-block;
+    width:200px;
+    height:50px;
+    text-align: center;
+    font-size:25px;
+    margin-right:-4px;/*마진을 음수로 주면, 해결됨 (구글링)*/
+}
+</style>
+<script>
+var box1;
+var box2;
+var box3;
 
-        function init(){
-            notice = document.getElementById("notice");
-            qna = document.getElementById("qna");
-            board = document.getElementById("board");
-        }
+function init(){
+    box1 = document.getElementById("box1");
+    box2 = document.getElementById("box2");
+    box3 = document.getElementById("box3");
+}
 
-        function showHide1(){
-            notice.style.display = "block";
-            qna.style.display ="none";
-            board.style.display = "none";
+//지금 선택한 탭에 해당하는 div만 나오게 하고, 나머지는 안나오게!!    
+function showHide(n){//매개변수 필요할것같은 느낌아닌 느낌..
+    //if ,for, 
+    /*
+    box1.style.display="block";
+    box2.style.display="none";
+    box3.style.display="none";
+    */
+    for(var i=1;i<=3;i++){
+        var box = document.getElementById("box"+i);
+        if(i === n){
+            box.style.display="block";//전부 보임
+        } else {
+            box.style.display="none";//전부 안보임
         }
+    }
 
-        function showHide2(){
-            notice.style.display = "none";
-            qna.style.display ="block";
-            board.style.display = "none";
-        }
+}   
 
-        function showHide3(){
-            notice.style.display = "none";
-            qna.style.display ="none";
-            board.style.display = "block";
-        }
 
-        window.addEventListener("load", function(){
-            init();
-        });
-        
-    </script>
+window.addEventListener("load", function(){
+    init();
+});
+</script>
 </head>
 <body>
-    <div class="wrap">
+    
+    <div class="wrapper">
         <div class="tab">
-            <a href="javascript:showHide1()" style = "background: red;">공지사항</a>
-            <a href="javascript:showHide2()" style = "background: gold;">Q&A</a>
-            <a href="javascript:showHide3()" style = "background: dodgerblue;">자유게시판</a>
+            <a href="javascript:showHide(1)" style="background:red">공지사항</a>
+            <a href="javascript:showHide(2)" style="background:gold">QnA</a>
+            <a href="javascript:showHide(3)" style="background:dodgerblue">자유게시판</a>
         </div>
         <div class="content">
-            <div id="notice"></div>
-            <div id="qna"></div>
-            <div id="board"></div>
+            <div id="box1"></div>
+            <div id="box2"></div>
+            <div id="box3"></div>
         </div>
-    </div>
+    </div>    
+
 </body>
 </html>

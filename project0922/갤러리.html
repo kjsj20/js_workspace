@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갤러리</title>
+    <style>
+        .wrap {
+            width: 600px;
+            height: 500px;
+            border: 4px solid blue;
+            margin: auto;
+            box-sizing: border-box;
+        }
+
+        #path {
+            width: 100%;
+            height: 50px;
+        }
+
+        #photo {
+            width: 100%;
+            height: 400px;
+        }
+
+        #photo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #control {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        var imgArr = new Array(); //크기를 명시하지 않아도 된다!!(js에서는...)
+        var n = 0;
+        imgArr[0] = "../images/travel2/aa.jpg";
+        imgArr[1] = "../images/travel2/ya.jpg";
+        imgArr[2] = "../images/travel2/ab.jpg";
+        imgArr[3] = "../images/travel2/bm.jpg";
+        imgArr[4] = "../images/travel2/pk.jpg";
+        imgArr[5] = "../images/travel2/mx.jpg";
+        imgArr[6] = "../images/travel2/kg.jpg";
+        imgArr[7] = "../images/travel2/et.jpg";
+        imgArr[8] = "../images/travel2/ub.jpg";
+        imgArr[9] = "../images/travel2/ax.jpg";
+
+        function prev() {
+            var pic = document.getElementById("pic");
+            n--;
+            pic.src = imgArr[n];
+        }
+
+        function next() {
+            var pic = document.getElementById("pic");
+            n++;
+            pic.src = imgArr[n];
+        }
+
+        function auto(){
+            var interval = document.getElementById("interval");
+            var speed = parseInt(interval.value);
+            if(speed===0){
+                alert("속도를 선택하세요");
+                return; //아래의 코드로는 더이상 진행못함..즉 실행부가 되돌아감
+            } 
+            
+            setInterval("next()", speed);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="path">경로 나올곳</div>
+        <div id="photo"><img id="pic" src="../images/travel2/aa.jpg" alt=""></div>
+        <div id="control">
+            <button onclick="prev()">◀</button>
+            <button onclick="auto()">auto</button>
+            <select id="interval">
+                <option value="0">속도선택</option>
+                <option value="1000">1초</option>
+                <option value="1500">1.5초</option>
+                <option value="2000">2초</option>
+            </select>
+            <button onclick="next()">▶</button>
+        </div>
+    </div>
+</body>
+
+</html>

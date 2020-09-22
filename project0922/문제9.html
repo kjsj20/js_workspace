@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제9</title>
+    <script>
+        /*
+            일반적인 언어에서는 배열 선언 시 반드시 크기를 명시해야 하지만
+            자바스크립트는 배열의 크기를 명시하지 않아도 되며, 이 경우 자동으로
+            늘어난다.
+        */
+        var word = new Array(7); //크기 명시
+
+        word[0] = "마우스";
+        word[1] = "광화문";
+        word[2] = "모니터";
+        word[3] = "지하철";
+        word[4] = "하늘";
+        word[5] = "짜장면";
+        word[6] = "휴지";
+
+        // document.write(word.length);
+
+        // 모든 데이터를 출력
+        for(var i =0; i<word.length; i++){
+            document.writeln(word[i]);
+        }
+
+        var word2 = new Array(); //크기 명시하지 않음
+
+        word2[0] = "강아지";
+        word2[1] = "고양이";
+        word2[2] = "말";
+        word2[3] = "곰";
+
+        // document.write(word2.length);
+        
+        for(var i =0; i<word2.length; i++){
+            document.writeln(word[i]);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
