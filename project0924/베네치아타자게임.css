@@ -1,0 +1,21 @@
+.wrapper {
+    width: 1200px;
+    height: 700px;
+    background: yellow;
+    margin: auto;
+    overflow: hidden;
+}
+
+.dash {
+    width: 200px;
+    height: 100%;
+    background: gold;
+    float: left;
+}
+
+#stage {
+    width: 1000px;
+    height: 100%;
+    background: dodgerblue;
+    float: left;
+}
