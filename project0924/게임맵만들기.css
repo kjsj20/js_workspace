@@ -1,0 +1,8 @@
+#wrapper {
+    width: 1000px;
+    height: 600px;
+    margin: auto;
+    background-image: url(https://studioplumeau.com/wp-content/uploads/2017/08/SurfIdent_BG-1024x379.jpg);
+    background-size: 100% 600px;
+    position: relative;
+}

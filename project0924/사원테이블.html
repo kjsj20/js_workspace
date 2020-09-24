@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이차원배열을 이용한 사원정보</title>
+    <link rel="stylesheet" href="사원테이블.css">
+    <script src="사원테이블.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="regist-form">
+            <!-- 전송범위를 설정할 수 있는 전용 태그 -->
+            <form onsubmit="event.preventDefault()">
+                <input type="text" id="empno" placeholder="EMPNO" />
+                <input type="text" id="ename" placeholder="ENAME" />
+                <select id="job">
+                    <option value="">담당업무</option>
+                    <option value="CLERK">CLERK</option>
+                    <option value="SALESMAN">SALESMAN</option>
+                    <option value="MANAGER">MANAGER</option>
+                    <option value="ANALYST">ANALYST</option>
+                    <option value="PRESIDENT">PRESIDENT</option>
+                </select>
+                <input type="text" id="mgr" placeholder="MGR" />
+                <input type="text" id="hiredate" placeholder="HIREDATE" />
+                <input type="text" id="sal" placeholder="SAL" />
+                <input type="text" id="comm" placeholder="COMM" />
+                <select id="deptno">
+                    <option value="">부서번호</option>
+                    <option value="10">10번부서</option>
+                    <option value="20">20번부서</option>
+                    <option value="30">30번부서</option>
+                    <option value="40">40번부서</option>
+                </select>
+                <!-- form 안에 있는 버튼은 무조건 전송을 일으킨다.. 
+                    html5의 button 부터 이 기능이 추가..
+                    개발자가 전송 주소를 명시하지 않으면, 현재 페이지로 전송
+                    하므로, 새로고침이 일어난다.
+                -->
+                <button onclick="regist()">사원등록</button>
+                <button onclick="createDump()">등록스!</button>
+            </form>
+        </div>
+        <div class="content"></div>
+    </div>
+</body>
+
+</html>

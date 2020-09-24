@@ -1,0 +1,36 @@
+#wrapper{
+    width: 1000px;
+    height: 700px;
+    background: yellow;
+    margin: auto;
+    overflow: hidden;
+}
+
+.regist-form{
+    width: 200px;
+    height: 100%;
+    background: #cccccc;
+    float: left;
+    text-align: center;
+}
+
+.regist-form input, button, select{
+    width: 90%;
+    height: 35px;
+    font-size: 17px;
+    margin: 2px;
+}
+
+select{
+    background-color: dodgerblue;
+    color: white;
+    font-weight: bold;
+}
+
+.content{
+    width: 800px;
+    height: 100%;
+    background: darkgoldenrod;
+    float: left;
+    overflow: scroll;
+}
