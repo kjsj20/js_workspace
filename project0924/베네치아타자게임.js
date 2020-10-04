@@ -5,10 +5,13 @@ var stepY = 5;
 var flag = false;
 var sel;
 var hpBox;
+var hpArray = new Array();
 var scoreBox;
 var score = 0;
 var itemBox;
 var keyword; //텍스트 입력 박스
+var count = 0;
+var hpcount = 0;
 /*
     타자게임에 등장할 모든 단어 데이터베이스 2차원 배열인 이유는?
     stage가 여러판이기 때문에 ...
@@ -37,19 +40,29 @@ function move() {
     if (flag) {
         // var len = ;
         for (var i = 0; i < spanArray.length; i++) {
-            spanArray[i].style.top = parseInt(spanArray[i].style.top) + stepY + "px";
+            spanArray[i].style.top = parseFloat(spanArray[i].style.top) + stepY + "px";
             //바닥에 닿았는지까지 판단!!
-            if (parseInt(spanArray[i].style.top) >= 700) {
-                console.log(spanArray[i]);
-                spanArray.splice(i, 1);
-                // console.log(word[level][i]);
+            if(hpcount === 9){
+                console.log(hpcount);
+                endGame();
+            }
+            if (parseFloat(spanArray[i].style.top) >= 700) {
+                stage.removeChild(spanArray[i]);
+                spanArray.splice(i , 1);
+                hpBox.removeChild(hpArray[hpcount]);
+                hpcount++;
             }
         }
     }
 }
 
+function endGame(){
+    flag = false;
+    alert("게임 오버~");
+}
+
 function startGame() {
-    flag = true;
+    flag = !flag;
     keyword.focus();
 }
 
@@ -72,6 +85,7 @@ function createHp() {
         hp.style.float = "left";
         hp.style.border = "2px solid yellow";
         hpBox.appendChild(hp);
+        hpArray.push(hp);
     }
 }
 //점수를 출력하는 함수
@@ -91,9 +105,12 @@ function init() {
     keyword.addEventListener("keyup", function(e) {
         if (e.keyCode === 13) {
             // alert("나눌렀어?");
-            for (i = 0; i < word[level].length; i++) {
-                if (keyword.value === word[level][i]) {
+            // for (i = 0; i < word[level].length; i++) {
+                for (i = 0; i < spanArray.length; i++){
+                    if(keyword.value === spanArray[i].innerHTML){
+                // if (keyword.value === word[level][i]) {
                     stage.removeChild(spanArray[i]);
+                    spanArray.splice(i , 1);
                     score += 10;
                     printScore();
                 }
