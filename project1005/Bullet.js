@@ -24,6 +24,22 @@ class Bullet{
     tick(){
         // 총알의 물리량 변화
         this.y += this.velY;
+
+        // 총알이 한걸음 , 한걸음 진행할때마다 배열에 존재하는 모든 적군을 대상으로
+        // 충돌했는지 여부를 판단할꺼임.
+        for(i = 0; i < enemyArray.length; i++){
+            var result = collisionCheck(this.img, enemyArray[i].img);
+            if(result){
+                var img = enemyArray[i].img;
+                wrapper.removeChild(img);
+                enemyArray.splice(i,1);
+
+                // img = bulletArray[0].img;
+                wrapper.removeChild(this.img);
+                var index = BulletArray.indexOf(this);
+                BulletArray.splice(index,1);
+            }
+        }
     }
 
     render(){

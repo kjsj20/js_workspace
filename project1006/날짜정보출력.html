@@ -1,0 +1,12 @@
+<script>
+    var ymd = new Date();
+    var days = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"]
+    var day = days[ymd.getDay()];
+    var year = parseInt(prompt("원하는 연도를 입력하세요"));
+    var month = parseInt(prompt("원하는 월을 입력하세요"));
+    var date = parseInt(prompt("원하는 일을 입력하세요"));
+    ymd.setFullYear(year)
+    ymd.setMonth(month);
+    ymd.setDate(date);
+    console.log(`${ymd.getFullYear()}년 ${ymd.getMonth()} 월 ${ymd.getDate()}`);
+</script>

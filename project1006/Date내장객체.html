@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Date내장객체</title>
+        <script>
+            var days = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"]
+            /*Date*/
+            function showTime(){
+                var d1 = new Date();
+                console.log(d1); // 객체는 문자열은 아니지만, 출력 명령을 만나면 자동으로 문자화 된다.
+                // 날짜 객체자체는 우리가 원하는 형식(포맷)은 아니므로,
+                // 친근한 형식으로 출력하려면, 날짜객체가 보유한 각종 메서드를 이용하면 된다.
+                // 개발 언어가 보유한 객체나 함수등에 대한 참조문서를 가리켜 API Document
+                // 참고) API Application Programming Interface(프로그래밍 조작법, 사용법)
+                // 년도 추출
+                var yy = d1.getFullYear();
+                console.log("현재 연도는 %d", yy);
+
+                var mm = d1.getMonth(); //주의!! 월은 0 부터 시작한다.
+                console.log("이번 달은 %d월 입니다", mm + 1) //디자인에 표현할때는 +1을 해주자!!
+
+                var dd = d1.getDate();
+                console.log("오늘은 %d일 입니다", dd);
+
+                var day = d1.getDay();
+                console.log("오늘은 %s입니다", days[day], "입니다");
+
+                // 5일뒤엔 몇일일까 ? 
+                // 현재 날짜 객체를 원하는 날짜로 조작!
+                var sd = d1.setDate(d1.getDate()+100);
+                console.log(d1.getFullYear(),d1.getMonth() + 1,d1.getDate(),days[d1.getDay()]);
+                // 날짜 객체는 getXXX() 형 메서드를 이용하여 정보를 가져올 수 있고.
+                // setXXX()형 메서드를 이용하여 정보를 조작도 할 수 있다.
+            }
+            showTime();
+            // setInterval("showTime()",1000);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

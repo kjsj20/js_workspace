@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myMap{
+            width: 1000px;
+            height: 800px;
+            background: yellow;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="myMap">구글 지도 나올 예정</div>
+    <script>
+        var myMap;
+        function init(){
+            myMap = document.querySelector("#myMap");
+            var mapProp={
+                center: new google.maps.LatLng(37.500453,127.036716),
+                zoom:5
+            }
+            var map = new google.maps.Map(myMap, mapProp);
+        }
+    </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=&callback=init"></script>
+</body>
+</html>
