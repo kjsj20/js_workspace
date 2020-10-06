@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>나의맵</title>
     <style>
         #myMap{
             width: 1000px;
@@ -19,11 +19,37 @@
         var myMap;
         function init(){
             myMap = document.querySelector("#myMap");
+            var pos = new google.maps.LatLng(37.500453,127.036716);
             var mapProp={
-                center: new google.maps.LatLng(37.500453,127.036716),
-                zoom:5
+                center: pos,
+                zoom:17
             }
+
             var map = new google.maps.Map(myMap, mapProp);
+
+            // 마커 생성
+            var marker = new google.maps.Marker({
+                position: pos,
+                animation:google.maps.Animation.BOUNCE,
+                icon:{
+                    url:'../images/shooting/e1.png',
+                    scaledSize:  new google.maps.Size(45,45)
+                }
+            });
+            marker.setMap(map); //마커를 적용할 맵 객체
+
+            // 마커에 클릭이벤트 부여하기
+            google.maps.event.addListener(marker, 'click', function(){
+                // map.setZoom(20);
+                // 정보창 띄우기 
+                var pop = new google.maps.InfoWindow({
+                    content: "여기가 역삼 맛집이에용^^"
+                });
+                pop.open(map, marker);
+            });
+
+            
+            
         }
     </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=&callback=init"></script>

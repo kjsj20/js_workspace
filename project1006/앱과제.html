@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의맵</title>
+    <style>
+        #myMap{
+            width: 1000px;
+            height: 800px;
+            background: yellow;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="myMap">구글 지도 나올 예정</div>
+    <script>
+        var myMap;
+        var maparr;
+        // var map;
+        // var marker;
+        // var pop;
+        // var pos;
+        var info = [
+            {
+                lat : "37.501338",
+                lng : "127.034972",
+                img : "../images/food/pizza.png",
+                cont : "피자 맛집!"
+            },
+            {
+                lat : "37.502956",
+                lng : "127.045387",
+                img : "../images/food/mac.png",
+                cont : "햄버거 맛집!"
+            },
+            {
+                lat : "37.499438",
+                lng : "127.035929",
+                img : "../images/food/bar.png",
+                cont : "카페 맛집!"
+            },
+            {
+                lat : "37.500453",
+                lng : "127.036716",
+                img : "../images/food/cook.png",
+                cont : "한식 맛집!"
+            },
+            {
+                lat : "37.498959",
+                lng : "127.032282",
+                img : "../images/food/rice.png",
+                cont : "레스토랑 맛집!"
+            }
+        ];
+        function init(){
+                var myMap = document.querySelector("#myMap");
+                var pos = new google.maps.LatLng(37.500453 , 127.036716);
+                var mapProp={
+                    center: pos,
+                    zoom:14
+                }
+
+                var map = new google.maps.Map(myMap, mapProp);
+
+            for(i=0; i<info.length; i++){
+                // 마커 생성
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(info[i].lat,info[i].lng),
+                    animation:google.maps.Animation.BOUNCE,
+                    icon:{
+                        url:info[i].img,
+                        scaledSize:  new google.maps.Size(45,45)
+                    }
+                });
+                marker.setMap(map); //마커를 적용할 맵 객체
+
+                // 마커에 클릭이벤트 부여하기
+                google.maps.event.addListener(marker, 'click', function(){
+                    // marker.position.setZoom(20);
+                    // 정보창 띄우기 
+                }); 
+                var pop = new google.maps.InfoWindow({
+                        content: info[i].cont
+                    });
+                    pop.open(map, marker);
+                }
+        }
+    </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=&callback=init"></script>
+</body>
+</html>
