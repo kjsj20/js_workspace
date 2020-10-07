@@ -1,0 +1,12 @@
+<script>
+    var yy = parseInt(prompt("원하시는 년도를 입력하세요"));
+    var mm = parseInt(prompt("원하시는 월을 입력하세요"));
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    console.log(d.getDay());
+    d.setFullYear(yy);
+    d.setMonth(mm - 1);
+    d.setDate(1);
+
+    var day = d.getDay();
+    document.write(yy+"년," + mm +"월 1일의 요일은" +days[day]+"입니다." );
+</script>

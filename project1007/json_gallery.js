@@ -20,10 +20,11 @@ function getDetail(index){
     //  1) 지금 선택한 썸네일을 크게 보여준다.
     var json = movie.marvel[index];
     photo.innerHTML = "<img src =\""+json.url+"\" width=\"100%\" height= \"100%\"/>"
+    
     //  2) 영화 제목을 출력한다.
     head.innerHTML = json.title;
-    //  3) 상세설명을 출력한다.
 
+    //  3) 상세설명을 출력한다.
     var tag = "<ul>";
     tag+="<li>장르 :" + json.category_name; + "</li>";
     tag+="<li>개봉일 :" + json.release_date + "</li>";
@@ -53,8 +54,8 @@ window.addEventListener("load",function(){
     init();
     createThumb();
     createPointer();
-    document.body.addEventListener("keydown", function(){
-        alert("키 눌렀어?");
-    });
+    // document.body.addEventListener("keydown", function(){
+    //     alert("키 눌렀어?");
+    // });
     setInterval("gameLoop()", 10);
 });
