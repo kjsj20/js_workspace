@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json이해과제</title>
+    <script>
+
+        var info = {
+            "name" : "철수",
+            "age" : 27,
+            "lang": ["java", "python", "c", "swift"],
+            "marry": false,
+            "pats":[{
+                "type": "dog",
+                "name": "뽀삐",
+                "age" : 8,
+                "color": "white"
+            },
+            {
+                "type": "cat",
+                "name" : "나비",
+                "age" : 7,
+                "color": "black"
+            },
+            {
+                "type": "snake",
+                "name" : "아나콘다",
+                "age" : 20,
+                "color": "gray"
+            }]
+        }
+
+        function init(){
+            console.log(info.pats[1].name);
+        }
+        window.addEventListener("load", function(){
+            init();
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
