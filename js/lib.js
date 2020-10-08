@@ -99,3 +99,17 @@ function collisionCheck(box1, box2) {
  
 //   return (result1 || result2) && (result3 || result4);
 //  }
+
+/*--------------------------------------------
+해당월의 총 일수 구하기 : 즉 마지막날 구하기
+m : 구하고 싶은 월을 의미
+주의) 자바스크립트에서 월은 0부터 시작하므로
+        10월을 구하려면 9를 넘겨야 한다.
+ --------------------------------------------*/
+ function getLastDate(yy,mm){
+      var d = new Date();
+      d.setFullYear(yy);
+      d.setMonth(mm+1); //일단 다음달로 넘어간다.. 0을 대입하여 이전달의 마지막일을 구하려고
+      d.setDate(0); //다시 이전달로 넘어오면서 마지막날로 셋팅된다.
+      return d.getDate();
+ }
