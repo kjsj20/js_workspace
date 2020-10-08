@@ -24,21 +24,11 @@ function createCell(){
     for(a = 0; a < 6; a ++){
         for(i = 0; i < 7; i ++){
             var txt = "";
-            var mon = 0;
             // 월별 일 수 계산식 .. 좋은방법이 있을까 ??? 배열 ..? 객체 ??..
-            if(currentMonth === 1 || currentMonth === 3 || currentMonth === 5 || currentMonth === 7 || currentMonth === 8|| currentMonth === 10 || currentMonth === 12){
-                mon = 31;
-            } else if (currentMonth === 4 || currentMonth === 6 || currentMonth === 9 || currentMonth === 11) {
-                mon = 30;
-            } else {
-                if(currentYear % 4 === 0){
-                    mon = 29;
-                } else{
-                    mon = 28
-                }
-            }
+            var mon = getLastDate(currentYear, currentMonth - 1);
 
             if(num === mon){
+                // console.log(mon);
                 break;
             }
             if(n >= startDay){
@@ -46,12 +36,20 @@ function createCell(){
             } else {
                 txt= "";
             }
-            new Cell(content, 100,100, num === 0 ? "" : num, num === 0 ? "#E2E2E2": "white");   
+            new Cell(content, 100,100, num === 0 ? "" : num, num === 0 ? "#E2E2E2": "white", n);   
 
             n++;
              //무조건 하면 안되고, 각 월마다 시작 요일을 알아내서, 그 요일서 부터 이 작업을 수행
         }
     }
+}
+
+function deleteCell(){
+    for(i=0; i<divArr.length;  i++){   
+        content.removeChild(divArr[i]);
+    }
+
+    divArr.splice(0,divArr.length);
 }
 
 // 현재날짜 구하기
@@ -69,7 +67,7 @@ function getCustomDate(){
     d.setMonth(currentMonth - 1);
     d.setDate(1);
     startDay = d.getDay();
-    content.innerHTML = "";
+    deleteCell();
     createDay();
     createCell();
 }

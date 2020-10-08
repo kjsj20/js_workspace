@@ -1,6 +1,9 @@
+let divArr = new Array();
+
 class Cell{
-    constructor(container, width, height, text, color){
+    constructor(container, width, height, text, color, count){
         this.div = document.createElement("div");
+        // this.div.id = count;
         this.width = width;
         this.height = height;
         this.container = container;
@@ -18,5 +21,6 @@ class Cell{
         this.div.innerHTML = "<h3>" + this.text + "</h3>";
 
         this.container.appendChild(this.div);
+        divArr.push(this.div);
     }
 }
